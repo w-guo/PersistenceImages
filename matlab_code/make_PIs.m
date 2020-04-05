@@ -95,7 +95,7 @@ function [ b_p_data, max_b_p_Hk, problems] = birth_persistence_coordinates(inter
 %            the second column is the death time of each feature. All death
 %            times must be greater than the birth time and there must be a
 %            finite death time for each feature. 
-%OUTPUT:     -b_p_interval_data: This is the modified coordinate data
+%OUTPUT:     -b_p_data: This is the modified coordinate data
 %            in a cell array. The sheets contain the modified Hk data.
 %            -max_b_p_Hk: gives the maximal persistence and maximal
 %            birth time across all point clouds for each Hk. 
@@ -244,7 +244,7 @@ function [integral_image]=grid_gaussian_bump(Hk, grid_values1_Hk, grid_values2_H
 %pixel boundary values,the gaussian variance, and values of the bump
 %function to linearly interpolate between to get the weighting values for
 %each gaussian.
-%Inputs:        -BPPairs is the matrix containing the (birth, persistence)
+%Inputs:        -Hk is the matrix containing the (birth, persistence)
 %               pairs for each interval. This comes from calling the
 %               birth_persistence_coordinate funtion.
 %               -grid_values1_Hk: is a vector containing the boundaries for
@@ -255,7 +255,7 @@ function [integral_image]=grid_gaussian_bump(Hk, grid_values1_Hk, grid_values2_H
 %               -weights: vector containing the weighting value for each
 %               interval as determined by the user specified weighting
 %               function and parameters.
-%Outputs:       -Integral image: is the image computed by discreting based
+%Outputs:       -integral image: is the image computed by discreting based
 %               on the values contained in grid_values and summing over all
 %               thedifferent gaussians centered at each point in the
 %               birth-persistence interval data.
